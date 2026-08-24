@@ -1,7 +1,7 @@
 import Section from '../components/Section';
 import { RevealText, RevealHeading } from '../components/RevealText';
 import Dock from '../components/Dock';
-import { FiPhone, FiMail, FiLinkedin, FiGithub } from 'react-icons/fi';
+import { FiPhone, FiMail, FiLinkedin } from 'react-icons/fi';
 import { useState } from 'react';
 
 const Contact = () => {
@@ -36,12 +36,6 @@ const Contact = () => {
       icon: <FiLinkedin aria-hidden="true" />,
       label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/divyanshyadav1027/',
-      target: '_blank'
-    },
-    {
-      icon: <FiGithub aria-hidden="true" />,
-      label: 'GitHub',
-      href: 'https://github.com/divyansh-1009',
       target: '_blank'
     }
   ];

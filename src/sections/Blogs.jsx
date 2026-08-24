@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Section from '../components/Section';
-import { RevealText } from '../components/RevealText';
 import { m as motion } from 'framer-motion';
 import { FaMediumM } from 'react-icons/fa';
 

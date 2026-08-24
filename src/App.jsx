@@ -13,6 +13,7 @@ const Experiences = lazy(() => import('./sections/Experiences'));
 const Projects = lazy(() => import('./sections/Projects'));
 const Blogs = lazy(() => import('./sections/Blogs'));
 const Skills = lazy(() => import('./sections/Skills'));
+const Profiles = lazy(() => import('./sections/Profiles'));
 const Contact = lazy(() => import('./sections/Contact'));
 
 export default function App() {
@@ -57,6 +58,7 @@ export default function App() {
               <Projects />
               <Blogs />
               <Skills />
+              <Profiles />
               <Contact />
             </Suspense>
           </main>
