@@ -1,0 +1,24 @@
+# Divyansh Yadav - Portfolio
+
+> Personal portfolio and project showcase of Divyansh Yadav, a software engineer and Computer Science undergraduate at IIT Jodhpur.
+
+## About
+Divyansh Yadav is a software developer pursuing his B.Tech in Computer Science and Engineering at the Indian Institute of Technology Jodhpur (IIT Jodhpur). His core focus areas include Software Engineering, Distributed Systems, Operating Systems, and Cybersecurity.
+
+## Key Projects
+- [Seiton](https://seiton-supply-chain-packaging.vercel.app): Autonomous 3D cargo packing optimizer using OpenCV and C++ heuristic engines.
+- [OmniView](https://omniview-five.vercel.app): On-device screen intelligence system acting as a photographic memory with local vector search.
+- [MiniTrue](https://minitrue.vercel.app): Decentralized, leaderless time-series database with gossip protocols and consistent hashing in Go.
+- [BitVision](https://bitvision-iitj.streamlit.app): Bitcoin price trend predictive analytics platform using machine learning and technical market indicators.
+- [ClarifAI](https://github.com/divyansh-1009/ClarifAI): AI study platform with RAG pipeline using Pinecone and Sentence Transformers.
+- [The Hive](https://github.com/divyansh-1009/The-Hive): Cross-device digital wellness tracker utilizing pgvector semantic embeddings.
+- [Destyn](https://destyn.onrender.com): College community and activity discovery web platform.
+- [PathViz](https://github.com/divyansh-1009/ICS_project): Desktop pathfinding and maze algorithm visualization tool in C and GTK.
+
+## Links & Profiles
+- [Website](https://www.divyanshyadav.me)
+- [GitHub](https://github.com/schizophrenicmaniac)
+- [LinkedIn](https://www.linkedin.com/in/divyanshyadav1027/)
+- [LeetCode](https://leetcode.com/u/divyansh288/)
+- [Codeforces](https://codeforces.com/profile/divyansh288)
+- [Medium](https://medium.com/@divyanshyadav1027)

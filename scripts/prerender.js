@@ -1,12 +1,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import { fileURLToPath } from 'node:url';
-import { createServer } from 'vite';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { build } from 'vite';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
 const distHtmlPath = path.resolve(rootDir, 'dist/index.html');
+const distSsrDir = path.resolve(rootDir, 'dist-ssr');
 
 async function prerender() {
   if (!fs.existsSync(distHtmlPath)) {
@@ -16,15 +17,20 @@ async function prerender() {
 
   const template = fs.readFileSync(distHtmlPath, 'utf-8');
 
-  // Create a Vite dev server in middleware mode to load SSR modules cleanly
-  const vite = await createServer({
+  // Build production SSR bundle so asset paths match production hashes
+  await build({
     root: rootDir,
-    server: { middlewareMode: true },
-    appType: 'custom',
+    build: {
+      ssr: 'src/entry-server.jsx',
+      outDir: 'dist-ssr',
+      emptyOutDir: true,
+    },
+    logLevel: 'warn',
   });
 
   try {
-    const { render } = await vite.ssrLoadModule('/src/entry-server.jsx');
+    const serverEntryPath = path.resolve(distSsrDir, 'entry-server.js');
+    const { render } = await import(pathToFileURL(serverEntryPath).href);
     const { html: appHtml } = render();
 
     // Replace root placeholder with pre-rendered application HTML
@@ -41,12 +47,14 @@ async function prerender() {
     }
 
     fs.writeFileSync(distHtmlPath, renderedHtml, 'utf-8');
-    console.log('✅ Successfully pre-rendered static HTML into dist/index.html');
+    console.log('✅ Successfully pre-rendered static HTML into dist/index.html with production assets');
   } catch (error) {
     console.error('❌ Prerender failed:', error);
     process.exit(1);
   } finally {
-    await vite.close();
+    if (fs.existsSync(distSsrDir)) {
+      fs.rmSync(distSsrDir, { recursive: true, force: true });
+    }
   }
 }
 

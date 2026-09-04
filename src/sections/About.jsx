@@ -26,6 +26,8 @@ const About = () => {
               alt="Divyansh Yadav" 
               className="about-image"
               loading="lazy"
+              width="350"
+              height="438"
             />
           </div>
         </motion.div>

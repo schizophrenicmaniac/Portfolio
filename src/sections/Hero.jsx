@@ -1,20 +1,24 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useSyncExternalStore, lazy, Suspense } from 'react';
 import { m as motion } from 'framer-motion';
 import { RevealText } from '../components/RevealText';
 
 const FaceCanvas = lazy(() => import('../components/FaceCanvas'));
 
-const Hero = () => {
-  const [isDesktop, setIsDesktop] = useState(() =>
-    typeof window !== 'undefined' ? window.matchMedia('(min-width: 1024px)').matches : false
-  );
+const subscribeMedia = (callback) => {
+  if (typeof window === 'undefined') return () => {};
+  const media = window.matchMedia('(min-width: 1024px)');
+  media.addEventListener('change', callback);
+  return () => media.removeEventListener('change', callback);
+};
 
-  useEffect(() => {
-    const media = window.matchMedia('(min-width: 1024px)');
-    const listener = (e) => setIsDesktop(e.matches);
-    media.addEventListener('change', listener);
-    return () => media.removeEventListener('change', listener);
-  }, []);
+const getDesktopSnapshot = () => {
+  return typeof window !== 'undefined' ? window.matchMedia('(min-width: 1024px)').matches : false;
+};
+
+const getServerSnapshot = () => false;
+
+const Hero = () => {
+  const isDesktop = useSyncExternalStore(subscribeMedia, getDesktopSnapshot, getServerSnapshot);
 
   return (
     <section

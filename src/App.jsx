@@ -60,7 +60,7 @@ export default function App({ helmetContext = {} }) {
             <Contact />
           </main>
 
-          <footer style={{ padding: '2rem', textAlign: 'center', opacity: 0.5, fontSize: '0.9rem', borderTop: '1px solid rgba(255, 239, 179, 0.1)' }}>
+          <footer style={{ padding: '2rem', textAlign: 'center', opacity: 0.85, fontSize: '0.9rem', borderTop: '1px solid rgba(255, 239, 179, 0.1)' }}>
             <p>&copy; {new Date().getFullYear()} | Divyansh Yadav | All rights reserved.</p>
           </footer>
         </div>
