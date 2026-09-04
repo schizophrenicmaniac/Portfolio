@@ -1,4 +1,4 @@
-import { useEffect, lazy, Suspense } from 'react';
+import { useEffect } from 'react';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
@@ -6,17 +6,16 @@ import { LazyMotion, domAnimation } from 'framer-motion';
 
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
+import About from './sections/About';
+import Education from './sections/Education';
+import Experiences from './sections/Experiences';
+import Projects from './sections/Projects';
+import Blogs from './sections/Blogs';
+import Skills from './sections/Skills';
+import Profiles from './sections/Profiles';
+import Contact from './sections/Contact';
 
-const About = lazy(() => import('./sections/About'));
-const Education = lazy(() => import('./sections/Education'));
-const Experiences = lazy(() => import('./sections/Experiences'));
-const Projects = lazy(() => import('./sections/Projects'));
-const Blogs = lazy(() => import('./sections/Blogs'));
-const Skills = lazy(() => import('./sections/Skills'));
-const Profiles = lazy(() => import('./sections/Profiles'));
-const Contact = lazy(() => import('./sections/Contact'));
-
-export default function App() {
+export default function App({ helmetContext = {} }) {
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.07,
@@ -37,12 +36,12 @@ export default function App() {
   }, []);
 
   return (
-    <HelmetProvider>
+    <HelmetProvider context={helmetContext}>
       <Helmet>
-        <title>Divyansh Yadav</title>
-        <meta name="description" content="The personal portfolio of Divyansh Yadav, a software engineer and Computer Science undergraduate at IIT Jodhpur." />
-        <meta property="og:title" content="Divyansh Yadav" />
-        <meta property="og:description" content="The personal portfolio of Divyansh Yadav, a software engineer and Computer Science undergraduate at IIT Jodhpur." />
+        <title>Divyansh Yadav | Software Engineer & CSE Undergrad at IIT Jodhpur</title>
+        <meta name="description" content="The personal portfolio of Divyansh Yadav, a software engineer and Computer Science undergraduate at IIT Jodhpur. Showcasing distributed systems, software engineering, and cybersecurity projects." />
+        <meta property="og:title" content="Divyansh Yadav | Software Engineer & CSE Undergrad at IIT Jodhpur" />
+        <meta property="og:description" content="The personal portfolio of Divyansh Yadav, a software engineer and Computer Science undergraduate at IIT Jodhpur. Showcasing distributed systems, software engineering, and cybersecurity projects." />
         <meta property="og:type" content="website" />
       </Helmet>
 
@@ -51,16 +50,14 @@ export default function App() {
           <Navbar />
           <main>
             <Hero />
-            <Suspense fallback={<div style={{ minHeight: '100vh' }}></div>}>
-              <About />
-              <Education />
-              <Experiences />
-              <Projects />
-              <Blogs />
-              <Skills />
-              <Profiles />
-              <Contact />
-            </Suspense>
+            <About />
+            <Education />
+            <Experiences />
+            <Projects />
+            <Blogs />
+            <Skills />
+            <Profiles />
+            <Contact />
           </main>
 
           <footer style={{ padding: '2rem', textAlign: 'center', opacity: 0.5, fontSize: '0.9rem', borderTop: '1px solid rgba(255, 239, 179, 0.1)' }}>

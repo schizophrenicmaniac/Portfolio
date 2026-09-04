@@ -26,9 +26,8 @@ const Blogs = () => {
   }, []);
 
   const stripHtmlAndLimit = (html, maxLength) => {
-    const tmp = document.createElement("DIV");
-    tmp.innerHTML = html;
-    let text = tmp.textContent || tmp.innerText || "";
+    if (!html) return '';
+    const text = html.replace(/<[^>]*>?/gm, '').trim();
     if (text.length > maxLength) {
       return text.substring(0, maxLength) + '...';
     }

@@ -3,11 +3,84 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/src/assets/Logo.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Divyansh Yadav | Software Engineer & CSE Undergrad at IIT Jodhpur</title>
   <meta name="description"
+    content="The personal portfolio of Divyansh Yadav, a software engineer and Computer Science undergraduate at IIT Jodhpur. Showcasing distributed systems, software engineering, and cybersecurity projects." />
+  <meta name="author" content="Divyansh Yadav" />
+  <meta name="theme-color" content="#012b26" />
+  <link rel="canonical" href="https://www.divyanshyadav.me/" />
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.divyanshyadav.me/" />
+  <meta property="og:site_name" content="Divyansh Yadav Portfolio" />
+  <meta property="og:title" content="Divyansh Yadav | Software Engineer & CSE Undergrad at IIT Jodhpur" />
+  <meta property="og:description"
+    content="The personal portfolio of Divyansh Yadav, a software engineer and Computer Science undergraduate at IIT Jodhpur. Showcasing distributed systems, software engineering, and cybersecurity projects." />
+  <meta property="og:image" content="https://www.divyanshyadav.me/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Divyansh Yadav - Portfolio" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.divyanshyadav.me/" />
+  <meta name="twitter:title" content="Divyansh Yadav | Software Engineer & CSE Undergrad at IIT Jodhpur" />
+  <meta name="twitter:description"
     content="The personal portfolio of Divyansh Yadav, a software engineer and Computer Science undergraduate at IIT Jodhpur." />
-  <title>Divyansh Yadav</title>
+  <meta name="twitter:image" content="https://www.divyanshyadav.me/og-image.jpg" />
+
+  <!-- Structured Data (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://www.divyanshyadav.me/#person",
+        "name": "Divyansh Yadav",
+        "url": "https://www.divyanshyadav.me/",
+        "image": "https://www.divyanshyadav.me/og-image.jpg",
+        "jobTitle": "Software Engineer",
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Indian Institute of Technology Jodhpur",
+          "sameAs": "https://www.iitj.ac.in/"
+        },
+        "sameAs": [
+          "https://github.com/schizophrenicmaniac",
+          "https://www.linkedin.com/in/divyanshyadav1027/",
+          "https://leetcode.com/u/divyansh288/",
+          "https://codeforces.com/profile/divyansh288",
+          "https://medium.com/@divyanshyadav1027"
+        ],
+        "knowsAbout": [
+          "Software Engineering",
+          "Distributed Systems",
+          "Operating Systems",
+          "Cybersecurity",
+          "React",
+          "Node.js",
+          "Three.js",
+          "System Design"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.divyanshyadav.me/#website",
+        "url": "https://www.divyanshyadav.me/",
+        "name": "Divyansh Yadav Portfolio",
+        "description": "The personal portfolio of Divyansh Yadav, a software engineer and Computer Science undergraduate at IIT Jodhpur.",
+        "publisher": {
+          "@id": "https://www.divyanshyadav.me/#person"
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Font preloads for fast rendering without fallback glitch -->
   <link rel="preload" href="/fonts/solander.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/science-gothic-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -18,7 +91,7 @@
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root"><!--app-html--></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
