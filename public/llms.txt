@@ -8,6 +8,7 @@ Divyansh Yadav is a software developer pursuing his B.Tech in Computer Science a
 ## Key Projects
 - [Seiton](https://seiton-supply-chain-packaging.vercel.app): Autonomous 3D cargo packing optimizer using OpenCV and C++ heuristic engines.
 - [OmniView](https://omniview-five.vercel.app): On-device screen intelligence system acting as a photographic memory with local vector search.
+- [AgentLens](https://github.com/schizophrenicmaniac/Brand-AI-Readiness-Audit-Adobe): Autonomous brand AI audit engine for Generative Engine Optimization (GEO) and agent discovery.
 - [MiniTrue](https://minitrue.vercel.app): Decentralized, leaderless time-series database with gossip protocols and consistent hashing in Go.
 - [BitVision](https://bitvision-iitj.streamlit.app): Bitcoin price trend predictive analytics platform using machine learning and technical market indicators.
 - [ClarifAI](https://github.com/divyansh-1009/ClarifAI): AI study platform with RAG pipeline using Pinecone and Sentence Transformers.

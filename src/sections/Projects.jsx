@@ -5,14 +5,6 @@ import { FaGithub } from 'react-icons/fa';
 
 const projects = [
   {
-    title: 'Seiton',
-    description: 'Seiton is an autonomous 3D cargo packing optimizer that calculates optimal placements for heterogeneous cargo boxes inside a container, maximizing volume utilization. It uses OpenCV to extract physical dimensions from raw 2D images and routes them through a high-performance C++ heuristic optimization engine. The system also features a real-time digital twin visualization showing box orientations and placement order in a WebGL-powered environment.',
-    github: 'https://github.com/divyansh-1009/Seiton',
-    liveUrl: 'https://seiton-supply-chain-packaging.vercel.app',
-    liveLabel: 'Seiton',
-    tags: ['React', 'Three.js', 'Go', 'C++', 'Python', 'OpenCV', 'GSAP']
-  },
-  {
     title: 'OmniView',
     description: 'OmniView is an on-device screen intelligence system acting as a secure photographic memory. Operating as a background service, it captures screen frames while discarding duplicate captures. The screenshots are then processed to extract context, which is further vectorized and stored locally. Users can query past screen history via an on device LLM.',
     github: 'https://github.com/divyansh-1009/OmniView',
@@ -21,12 +13,26 @@ const projects = [
     tags: ['Android', 'Kotlin', 'MediaProjection API', 'pHash', 'Accessibility API', 'OCR', 'MobileBERT', 'Gemma 4', 'ObjectBox']
   },
   {
+    title: 'AgentLens',
+    description: 'AgentLens is an autonomous brand audit engine designed for Generative Engine Optimization (GEO) to evaluate how effectively websites are discovered, interpreted, and cited by AI agents and answer engines. Built to the agentskills.io standard for the Adobe University Hackathon, it analyzes crawler accessibility, structured data grounding, and content extraction to uncover AI visibility gaps. The system generates prioritized audit reports with actionable remediations to maximize brand presence in LLM responses.',
+    github: 'https://github.com/schizophrenicmaniac/Brand-AI-Readiness-Audit-Adobe',
+    tags: ['Python', 'Agent Skills', 'JSON-LD']
+  },
+  {
     title: 'MiniTrue',
     description: 'MiniTrue is a decentralized, leaderless time-series database designed for high-throughput IoT telemetry workloads. Operating as a symmetric multi-node cluster, it gossips over TCP and uses a consistent hash ring for deterministic data placement. Ingested data is cached in-memory with pre-aggregated metadata, then compressed and flushed to a custom columnar disk format for fast local and distributed query execution.',
     github: 'https://github.com/divyansh-1009/MiniTrue-Time-Series-Database',
     liveUrl: 'https://minitrue.vercel.app',
     liveLabel: 'MiniTrue',
     tags: ['Go', 'Gossip Protocol', 'Consistent Hashing', 'Merkle Trees', 'Gorilla Compression', 'Parquet Storage']
+  },
+  {
+    title: 'Seiton',
+    description: 'Seiton is an autonomous 3D cargo packing optimizer that calculates optimal placements for heterogeneous cargo boxes inside a container, maximizing volume utilization. It uses OpenCV to extract physical dimensions from raw 2D images and routes them through a high-performance C++ heuristic optimization engine. The system also features a real-time digital twin visualization showing box orientations and placement order in a WebGL-powered environment.',
+    github: 'https://github.com/divyansh-1009/Seiton',
+    liveUrl: 'https://seiton-supply-chain-packaging.vercel.app',
+    liveLabel: 'Seiton',
+    tags: ['React', 'Three.js', 'Go', 'C++', 'Python', 'OpenCV', 'GSAP']
   },
   {
     title: 'BitVision',
