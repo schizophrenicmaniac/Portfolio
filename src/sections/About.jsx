@@ -45,7 +45,7 @@ const About = () => {
             style={{ fontSize: '1.1rem', marginBottom: '1.5rem', color: 'rgba(255, 239, 179, 0.9)' }}
           />
           <RevealText 
-            text="Outside the realm of computer sorcery, I enjoy doing ice-skating and playing basketball. I enjoy watching movies, web series and animes in the time when I think I should probably be sleeping. I also love to participate in debates and improvs which help me bring the necessary drama and chaos in my life."  
+            text="Outside the realm of computer sorcery, I like to try new and different things, no matter how random or bizarre they may seem to the general eye. That is how I ended up loving ice-skating and taking part in debates and improvs, which bring the necessary drama and chaos into my life. And when I should probably be sleeping, I am usually watching movies, web series or anime."  
             delay={0.4}
             style={{ fontSize: '1.1rem', color: 'rgba(255, 239, 179, 0.9)' }}
           />

@@ -1,6 +1,7 @@
 import { useSyncExternalStore, lazy, Suspense } from 'react';
 import { m as motion } from 'framer-motion';
 import { RevealText } from '../components/RevealText';
+import BannerParticles from '../components/BannerParticles';
 
 const FaceCanvas = lazy(() => import('../components/FaceCanvas'));
 
@@ -32,6 +33,8 @@ const Hero = () => {
         position: 'relative'
       }}
     >
+      <BannerParticles />
+
       <div className="container hero-container">
         <div className="hero-visual-wrapper">
           {isDesktop && (
@@ -60,9 +63,9 @@ const Hero = () => {
             className="hero-subcontent"
           >
             <RevealText
-              text="I like to try new and different things in my life, no matter how random or bizarre they may seem to the general eye."
+              text="“Do so much work that it would be unreasonable for you to not be successful.”"
               className="hero-reveal-text"
-              style={{ fontSize: '1.25rem', color: 'rgba(255, 239, 179, 0.8)', marginBottom: '3rem' }}
+              style={{ fontSize: '1.25rem', fontStyle: 'italic', color: 'rgba(255, 239, 179, 0.8)', marginBottom: '3rem' }}
               delay={0.3}
             />
 
@@ -94,6 +97,8 @@ const Hero = () => {
 
       <style>{`
         .hero-container {
+          position: relative;
+          z-index: 1;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -149,8 +154,7 @@ const Hero = () => {
             align-items: flex-start;
           }
           .hero-reveal-text {
-            justify-content: flex-start;
-            text-align: left;
+            align-self: center;
           }
           .btn-wrapper {
             justify-content: flex-start;
