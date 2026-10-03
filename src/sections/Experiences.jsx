@@ -13,7 +13,7 @@ const experiences = [
     ]
   },
   {
-    role: 'Computer Networks and Cryptography Lead',
+    role: 'Cybersecurity Domain',
     company: 'Inter IIT Tech 14.0, Patna (Qtrino Labs)',
     period: 'November 2025 - December 2025',
     bulletPoints: [

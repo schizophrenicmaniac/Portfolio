@@ -22,8 +22,6 @@ const projects = [
     title: 'MiniTrue',
     description: 'MiniTrue is a decentralized, leaderless time-series database designed for high-throughput IoT telemetry workloads. Operating as a symmetric multi-node cluster, it gossips over TCP and uses a consistent hash ring for deterministic data placement. Ingested data is cached in-memory with pre-aggregated metadata, then compressed and flushed to a custom columnar disk format for fast local and distributed query execution.',
     github: 'https://github.com/divyansh-1009/MiniTrue-Time-Series-Database',
-    liveUrl: 'https://minitrue.vercel.app',
-    liveLabel: 'MiniTrue',
     tags: ['Go', 'Gossip Protocol', 'Consistent Hashing', 'Merkle Trees', 'Gorilla Compression', 'Parquet Storage']
   },
   {
