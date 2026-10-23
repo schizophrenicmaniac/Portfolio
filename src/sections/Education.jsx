@@ -8,11 +8,11 @@ const educationList = [
     company: 'Indian Institute of Technology, Jodhpur',
     period: '2024 - Present',
     bulletPoints: [
-      'Maintaining a strong academic record with a current CGPA of 8.55.',
       'Mentored 12 freshers throughout their first year as a Student Guide for the Wellbeing Committee.',
-      'Managed digital infrastructure as Tech Coordinator for Alumni Affairs.',
-      'Directed flagship technical competitions as Assistant Head for Prometeo 2026.',
-      'Represented the institute at Inter IIT Tech 14.0.'
+      'Managed digital infrastructure as Tech Coordinator for Society of Alumni Affairs.',
+      'Directed flagship technical competitions like RC Racing and CTF as Assistant Head for Prometeo 2026.',
+      'Represented the institute at Inter IIT Tech 14.0.',
+      'Leading the technical events team as Head of Technical Events for Prometeo 2027.'
     ]
   },
   {
