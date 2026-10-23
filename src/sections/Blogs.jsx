@@ -10,11 +10,28 @@ const Blogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@divyanshyadav1027');
-        const data = await response.json();
-        if (data.status === 'ok') {
-          setBlogs(data.items);
-        }
+        // Medium's feed has no CORS headers, so it is proxied same-origin (vercel.json / vite.config.js)
+        const response = await fetch('/medium-feed');
+        if (!response.ok) throw new Error(`Feed request failed: ${response.status}`);
+        const xml = new DOMParser().parseFromString(await response.text(), 'application/xml');
+
+        setBlogs(Array.from(xml.getElementsByTagName('item'), (item) => {
+          const field = (tag) => item.getElementsByTagName(tag)[0]?.textContent || '';
+          const content = field('content:encoded');
+          // First real image in the post; skips Medium's tracking pixel
+          const thumbnail = [...content.matchAll(/<img[^>]+src="([^"]+)"/g)]
+            .map((match) => match[1])
+            .find((src) => !src.includes('/_/stat'));
+
+          return {
+            title: field('title'),
+            link: field('link'),
+            pubDate: field('pubDate'),
+            description: content,
+            thumbnail,
+            categories: Array.from(item.getElementsByTagName('category'), (c) => c.textContent),
+          };
+        }));
       } catch (error) {
         console.error('Error fetching Medium blogs:', error);
       } finally {
