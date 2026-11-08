@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { m as motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { LuMenu as Menu, LuX as X } from 'react-icons/lu';
 
 const navItems = [
   { name: 'About', href: '#about' },
