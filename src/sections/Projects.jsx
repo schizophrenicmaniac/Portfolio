@@ -7,7 +7,7 @@ const projects = [
   {
     title: 'OmniView',
     description: 'OmniView is an on-device screen intelligence system acting as a secure photographic memory. Operating as a background service, it captures screen frames while discarding duplicate captures. The screenshots are then processed to extract context, which is further vectorized and stored locally. Users can query past screen history via an on device LLM.',
-    github: 'https://github.com/divyansh-1009/OmniView',
+    github: 'https://github.com/schizophrenicmaniac/OmniView',
     liveUrl: 'https://omniview-five.vercel.app',
     liveLabel: 'OmniView',
     tags: ['Android', 'Kotlin', 'MediaProjection API', 'pHash', 'Accessibility API', 'OCR', 'MobileBERT', 'Gemma 4', 'ObjectBox']
@@ -21,13 +21,13 @@ const projects = [
   {
     title: 'MiniTrue',
     description: 'MiniTrue is a decentralized, leaderless time-series database designed for high-throughput IoT telemetry workloads. Operating as a symmetric multi-node cluster, it gossips over TCP and uses a consistent hash ring for deterministic data placement. Ingested data is cached in-memory with pre-aggregated metadata, then compressed and flushed to a custom columnar disk format for fast local and distributed query execution.',
-    github: 'https://github.com/divyansh-1009/MiniTrue-Time-Series-Database',
+    github: 'https://github.com/schizophrenicmaniac/MiniTrue-Time-Series-Database',
     tags: ['Go', 'Gossip Protocol', 'Consistent Hashing', 'Merkle Trees', 'Gorilla Compression', 'Parquet Storage']
   },
   {
     title: 'Seiton',
     description: 'Seiton is an autonomous 3D cargo packing optimizer that calculates optimal placements for heterogeneous cargo boxes inside a container, maximizing volume utilization. It uses OpenCV to extract physical dimensions from raw 2D images and routes them through a high-performance C++ heuristic optimization engine. The system also features a real-time digital twin visualization showing box orientations and placement order in a WebGL-powered environment.',
-    github: 'https://github.com/divyansh-1009/Seiton',
+    github: 'https://github.com/schizophrenicmaniac/Seiton',
     liveUrl: 'https://seiton-supply-chain-packaging.vercel.app',
     liveLabel: 'Seiton',
     tags: ['React', 'Three.js', 'Go', 'C++', 'Python', 'OpenCV', 'GSAP']
@@ -35,7 +35,7 @@ const projects = [
   {
     title: 'BitVision',
     description: 'BitVision is designed to predict Bitcoin price trends using raw OHLCV market data and technical indicators like RSI and Bollinger Bands. After training and benchmark testing multiple predictive models—including SVMs, Naive Bayes, Decision Trees, LSTMs, XGBoost, and Neural Networks—Ridge Regression was selected as the final model due to yielding the lowest Mean Absolute Error and highest R-squared score on out-of-sample data.',
-    github: 'https://github.com/divyansh-1009/BitVision',
+    github: 'https://github.com/schizophrenicmaniac/BitVision',
     liveUrl: 'https://bitvision-iitj.streamlit.app',
     liveLabel: 'BitVision',
     tags: ['Python', 'Scikit-Learn', 'Ridge Regression', 'Pandas', 'NumPy', 'Streamlit']
@@ -43,19 +43,19 @@ const projects = [
   {
     title: 'ClarifAI',
     description: 'ClarifAI is an AI-powered learning platform that allows users to upload their coursework and study notes. To help students prepare for exams, it implements a Retrieval-Augmented Generation pipeline using sentence-transformers and Pinecone to ground answers directly in the uploaded documents. The system also generates custom assessment papers and personalized mock tests to track learning progress.',
-    github: 'https://github.com/divyansh-1009/ClarifAI',
+    github: 'https://github.com/schizophrenicmaniac/ClarifAI',
     tags: ['Django', 'Flutter', 'Pinecone', 'Google Gemini', 'SBERT', 'SQLite']
   },
   {
     title: 'The Hive',
     description: 'The Hive is a multi-device digital wellness and productivity platform that tracks browsing and application habits across Chrome and Android. It uses on-server transformer models to generate semantic embeddings of domains and apps, classifying them automatically via pgvector and HNSW similarity searches. Daily activities are processed through a Bayesian rating system to score productivity trends and gamify habit building.',
-    github: 'https://github.com/divyansh-1009/The-Hive',
+    github: 'https://github.com/schizophrenicmaniac/The-Hive',
     tags: ['Kotlin', 'Node.js', 'PostgreSQL', 'pgvector', 'Chrome Extension', 'Transformers']
   },
   {
     title: 'Destyn',
     description: 'Destyn is a college community application designed to connect local students sharing similar interests across nearby campuses. The platform enables users to discover common interests and helps them receive personalized activity recommendations for hanging out in real life. Additionally, it features an anonymous community gossip page and facilitates real-time chat and interactions.',
-    github: 'https://github.com/divyansh-1009/Destyn-Project',
+    github: 'https://github.com/schizophrenicmaniac/Destyn',
     liveUrl: 'https://destyn.onrender.com',
     liveLabel: 'Destyn',
     tags: ['Next.js', 'Node.js', 'MongoDb', 'Cloudinary', 'WebSockets', 'Google Gemini']
@@ -63,13 +63,13 @@ const projects = [
   {
     title: 'Alumni Yearbook Portal',
     description: 'Alumni Yearbook Portal is a portal designed for the graduating batch of IIT Jodhpur. The platform enables students to upload photo memories and write messages to peers, compiling them automatically into personalized digital yearbooks for each graduate. To drive engagement, it features batch-wide polling alongside private messaging that allows user messages and quotes to be directly integrated into yearbooks.',
-    github: 'https://github.com/divyansh-1009/Alumni-Yearbook',
+    github: 'https://github.com/schizophrenicmaniac/Alumni-Yearbook',
     tags: ['React', 'PostgreSQL', 'AWS S3', 'Node.js']
   },
   {
     title: 'PathViz',
     description: 'PathViz is a desktop application designed to visualize maze generation and pathfinding algorithms. Built in C, the system generates random grid mazes and solves them in real-time using Dijkstra\'s and A* search algorithms. The graphical user interface is built natively using GTK, allowing users to watch the step-by-step traversal and compare algorithm efficiencies visually.',
-    github: 'https://github.com/divyansh-1009/ICS_project',
+    github: 'https://github.com/schizophrenicmaniac/ICS_project',
     tags: ['C', 'GTK', 'Dijkstra', 'A*']
   }
 ];

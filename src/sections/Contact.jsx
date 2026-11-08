@@ -1,25 +1,13 @@
 import Section from '../components/Section';
 import { RevealText, RevealHeading } from '../components/RevealText';
 import Dock from '../components/Dock';
-import { FiPhone, FiMail, FiLinkedin } from 'react-icons/fi';
+import { FiMail, FiLinkedin } from 'react-icons/fi';
 import { useState } from 'react';
 
 const Contact = () => {
-  const [copiedPhone, setCopiedPhone] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const socialItems = [
-    {
-      icon: <FiPhone aria-hidden="true" />,
-      label: copiedPhone ? 'Copied!' : 'Phone',
-      href: 'tel:+919210992006',
-      onClick: () => {
-        navigator.clipboard.writeText('+91 9210992006').then(() => {
-          setCopiedPhone(true);
-          setTimeout(() => setCopiedPhone(false), 2000);
-        }).catch(() => {});
-      }
-    },
     {
       icon: <FiMail aria-hidden="true" />,
       label: copiedEmail ? 'Copied!' : 'Email',
