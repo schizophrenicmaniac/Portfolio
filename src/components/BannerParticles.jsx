@@ -198,8 +198,8 @@ const BannerParticles = () => {
     const resize = () => {
       const parent = canvas.parentElement;
       if (parent) {
-        // Render at device pixel ratio so leaves stay crisp on retina screens
-        const dpr = window.devicePixelRatio || 1;
+        // Render at device pixel ratio (capped at 2) so leaves stay crisp on retina screens
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
         width = parent.clientWidth;
         height = parent.clientHeight;
         canvas.width = width * dpr;
@@ -219,16 +219,28 @@ const BannerParticles = () => {
       }
     };
 
+    // Intersection Observer to pause rendering when off-screen
+    let isVisible = true;
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    visibilityObserver.observe(canvas);
+
     const animate = () => {
       if (isUnmounted) return;
+      animationFrameId = requestAnimationFrame(animate);
+
+      if (!isVisible) return; // Pause calculations and rendering if off-screen
+
       ctx.clearRect(0, 0, width, height);
 
       for (const particle of particles) {
         particle.update();
         particle.draw();
       }
-
-      animationFrameId = requestAnimationFrame(animate);
     };
 
     setTimeout(() => {
@@ -243,6 +255,7 @@ const BannerParticles = () => {
     return () => {
       isUnmounted = true;
       window.removeEventListener('resize', resize);
+      visibilityObserver.disconnect();
       if (animationFrameId) {
         cancelAnimationFrame(animationFrameId);
       }

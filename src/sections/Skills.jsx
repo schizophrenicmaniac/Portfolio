@@ -7,7 +7,6 @@ import {
   SiTypescript,
   SiGo,
   SiKotlin,
-  SiAssemblyscript,
   SiHtml5,
   SiCss,
   SiTailwindcss,
@@ -37,6 +36,7 @@ import {
   SiOwasp,
   SiSplunk,
 } from 'react-icons/si';
+import { LuCpu } from 'react-icons/lu';
 
 const skillGroups = [
   {
@@ -49,7 +49,7 @@ const skillGroups = [
       { name: 'TypeScript', Icon: SiTypescript },
       { name: 'Go', Icon: SiGo },
       { name: 'Kotlin', Icon: SiKotlin },
-      { name: 'Assembly', Icon: SiAssemblyscript }
+      { name: 'Assembly', Icon: LuCpu }
     ]
   },
   {

@@ -26,10 +26,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+    <header
+      className="nav-enter"
       style={{
         position: 'fixed',
         top: 0,
@@ -74,7 +72,7 @@ const Navbar = () => {
         {/* Mobile Nav Toggle */}
         <button 
           className="mobile-toggle"
-          style={{ display: 'block', color: 'var(--color-text)', zIndex: 1001 }}
+          style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', marginRight: '-10px', color: 'var(--color-text)', zIndex: 1001 }}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle navigation menu"
           aria-expanded={mobileMenuOpen}
@@ -118,12 +116,12 @@ const Navbar = () => {
         )}
       </div>
       <style>{`
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
           .desktop-nav { display: flex !important; }
           .mobile-toggle { display: none !important; }
         }
       `}</style>
-    </motion.header>
+    </header>
   );
 };
 

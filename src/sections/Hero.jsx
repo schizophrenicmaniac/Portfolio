@@ -1,6 +1,5 @@
 import { useSyncExternalStore, lazy, Suspense } from 'react';
 import { m as motion } from 'framer-motion';
-import { RevealText } from '../components/RevealText';
 import BannerParticles from '../components/BannerParticles';
 
 const FaceCanvas = lazy(() => import('../components/FaceCanvas'));
@@ -45,29 +44,26 @@ const Hero = () => {
         </div>
 
         <div className="hero-text-wrapper">
-          <motion.div
-            initial={{ opacity: 0, filter: 'blur(10px)', y: 50 }}
-            animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <h1 className="hero-heading" style={{ marginBottom: '1.5rem' }}>
-              A Software Developer pursuing his <span style={{ color: 'var(--color-accent)' }}>B.Tech in Computer Science and Engineering at IIT Jodhpur.</span>
+          {/* CSS entrance animations so the prerendered hero paints before hydration */}
+          <div className="animate-in">
+            <h1 className="hero-heading" style={{ marginBottom: '0.75rem' }}>
+              Divyansh Yadav
             </h1>
-          </motion.div>
+            <p className="hero-subheading" style={{ marginBottom: '1.5rem' }}>
+              A Software Developer pursuing his <span style={{ color: 'var(--color-accent)' }}>B.Tech in Computer Science and Engineering at IIT Jodhpur.</span>
+            </p>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            style={{ display: 'flex', flexDirection: 'column', width: '100%' }}
-            className="hero-subcontent"
+          <div
+            style={{ display: 'flex', flexDirection: 'column', width: '100%', animationDelay: '0.3s' }}
+            className="hero-subcontent animate-in"
           >
-            <RevealText
-              text="“Do so much work that it would be unreasonable for you to not be successful.”"
+            <p
               className="hero-reveal-text"
               style={{ fontSize: '1.25rem', fontStyle: 'italic', color: 'rgba(255, 239, 179, 0.8)', marginBottom: '3rem' }}
-              delay={0.3}
-            />
+            >
+              “Do so much work that it would be unreasonable for you to not be successful.”
+            </p>
 
             <div className="btn-wrapper" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="#contact" className="btn btn-primary">
@@ -77,7 +73,7 @@ const Hero = () => {
                 View Work
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
@@ -129,6 +125,11 @@ const Hero = () => {
         }
         .hero-heading {
           font-size: clamp(1.76rem, 4vw, 3.2rem);
+        }
+        .hero-subheading {
+          font-family: var(--font-title);
+          font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+          line-height: 1.2;
         }
         
         @media (min-width: 1024px) {

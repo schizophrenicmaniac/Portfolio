@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
-import { LazyMotion, domAnimation } from 'framer-motion';
+import { LazyMotion, MotionConfig, domAnimation } from 'framer-motion';
 
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
@@ -16,18 +16,15 @@ import Contact from './sections/Contact';
 
 export default function App() {
   useEffect(() => {
+    // Keep native scrolling for users who prefer reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const lenis = new Lenis({
       lerp: 0.07,
-      wheelMultiplier: 0.8, 
+      wheelMultiplier: 0.8,
       smoothWheel: true,
+      autoRaf: true,
     });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
 
     return () => {
       lenis.destroy();
@@ -36,24 +33,26 @@ export default function App() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className="app-container">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Education />
-          <Experiences />
-          <Projects />
-          <Blogs />
-          <Skills />
-          <Profiles />
-          <Contact />
-        </main>
+      <MotionConfig reducedMotion="user">
+        <div className="app-container">
+          <Navbar />
+          <main>
+            <Hero />
+            <About />
+            <Education />
+            <Experiences />
+            <Projects />
+            <Blogs />
+            <Skills />
+            <Profiles />
+            <Contact />
+          </main>
 
-        <footer style={{ padding: '2rem', textAlign: 'center', opacity: 0.85, fontSize: '0.9rem', borderTop: '1px solid rgba(255, 239, 179, 0.1)' }}>
-          <p>&copy; {new Date().getFullYear()} | Divyansh Yadav | All rights reserved.</p>
-        </footer>
-      </div>
+          <footer style={{ padding: '2rem', textAlign: 'center', opacity: 0.85, fontSize: '0.9rem', borderTop: '1px solid rgba(255, 239, 179, 0.1)' }}>
+            <p>&copy; {new Date().getFullYear()} | Divyansh Yadav | All rights reserved.</p>
+          </footer>
+        </div>
+      </MotionConfig>
     </LazyMotion>
   );
 }

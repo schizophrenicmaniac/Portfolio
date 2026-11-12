@@ -150,7 +150,6 @@ export default function Dock({
           border: 1px solid rgba(255, 239, 179, 0.06);
           cursor: pointer;
           color: var(--color-text);
-          outline: none;
           transition: background 0.2s ease, border-color 0.2s ease;
           box-sizing: border-box;
           text-decoration: none;
@@ -160,6 +159,11 @@ export default function Dock({
         .dock-item:focus-visible {
           background: rgba(255, 239, 179, 0.12);
           border-color: rgba(255, 239, 179, 0.25);
+        }
+
+        .dock-item:focus-visible {
+          outline: 2px solid var(--color-accent);
+          outline-offset: 3px;
         }
 
         .dock-icon {

@@ -33,11 +33,18 @@ const FaceCanvas = () => {
     camera.position.z = 6;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({
-      canvas,
-      antialias: true,
-      alpha: true,
-    });
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        antialias: true,
+        alpha: true,
+      });
+    } catch {
+      // WebGL unavailable: leave the canvas empty instead of crashing the page
+      window.removeEventListener('mousemove', handleMouseMove);
+      return;
+    }
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
